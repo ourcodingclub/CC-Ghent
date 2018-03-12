@@ -1,0 +1,52 @@
+---
+title: "Your title"
+author: "Your name"
+date: "03/15/2018"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is an empty Markdown document to get filled up with some of the code from the tidyverse tutorial.
+
+```{r, echo = F, message = F}
+# Packages ----
+library(tidyverse)  # Hadley Wickham's tidyverse - the theme of this tutorial
+library(broom)  # To summarise model outputs
+library(ggExtra)  # To make pretty graphs - addon package to ggplot2
+library(maps)  # To make pretty maps - warning: maps masks map from purr!
+library(RColorBrewer)  # To make pretty colours
+library(gridExtra)  # To arrange multi-plot panels
+```
+
+```{r, echo = FALSE}
+# Setting a custom ggplot2 function ---
+# *** Functional Programming ***
+# This function makes a pretty ggplot theme
+# This function takes no arguments!
+theme_LPD <- function(){
+  theme_bw()+
+    theme(axis.text.x = element_text(size = 12, vjust = 1, hjust = 1),
+          axis.text.y = element_text(size = 12),
+          axis.title.x = element_text(size = 14, face = "plain"),             
+          axis.title.y = element_text(size = 14, face = "plain"),             
+          panel.grid.major.x = element_blank(),                                          
+          panel.grid.minor.x = element_blank(),
+          panel.grid.minor.y = element_blank(),
+          panel.grid.major.y = element_blank(),  
+          plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), units = , "cm"),
+          plot.title = element_text(size = 20, vjust = 1, hjust = 0.5),
+          legend.text = element_text(size = 12, face = "italic"),          
+          legend.title = element_blank(),                              
+          legend.position = c(0.5, 0.8))
+}
+```
+
+```{r}
+# Load data ----
+load("~/LPDdata_Feb2016.RData")
+```
+
+Add the rest of the code and text below.
