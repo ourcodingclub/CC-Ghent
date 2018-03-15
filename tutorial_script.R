@@ -20,7 +20,7 @@ library(ggplot2)
 
 # Save the plot in your working directory
 png(filename = "trait_correlation.png", width = 600, height = 600)
-(correlation <- corrplot(cor(data[,2:6], use = "pairwise.complete.obs")))
+(correlation <- corrplot(cor(traits[,2:5], use = "pairwise.complete.obs")))
 dev.off()
 
 # Graph raw trait data behind mean +/- 95% CI's and save the file
